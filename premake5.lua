@@ -89,7 +89,7 @@ project "Sandbox"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS"
+			"TWINKLE_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
