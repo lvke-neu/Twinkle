@@ -9,3 +9,5 @@
 #else
 	#error Twinkle only support Windows!
 #endif
+
+#define BIT(X) (1 << X)

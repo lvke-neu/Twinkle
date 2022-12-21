@@ -1,4 +1,6 @@
+#include "TwinklePch.h"
 #include "Log.h"
+
 
 namespace Twinkle
 {

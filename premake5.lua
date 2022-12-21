@@ -18,6 +18,9 @@ project "Twinkle"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "TwinklePch.h"
+	pchsource "Twinkle/src/TwinklePch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -26,13 +29,14 @@ project "Twinkle"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/3rdparty/spdlog/include"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17763.0"
+		systemversion "latest"
 
 		defines
 		{
@@ -85,7 +89,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17763.0"
+		systemversion "latest"
 
 		defines
 		{
