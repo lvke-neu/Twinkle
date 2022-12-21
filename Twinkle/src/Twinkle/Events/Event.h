@@ -1,5 +1,6 @@
 #pragma once
 
+#include "TwinklePch.h"
 #include "Twinkle/Core.h"
 
 namespace Twinkle
