@@ -10,6 +10,12 @@ workspace "Twinkle"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Twinkle/3rdparty/GLFW/include"
+
+include "Twinkle/3rdparty/GLFW"
+
 project "Twinkle"
 	location "Twinkle"
 	kind "SharedLib"
@@ -30,8 +36,16 @@ project "Twinkle"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/3rdparty/spdlog/include"
+		"%{prj.name}/3rdparty/spdlog/include",
+		"%{IncludeDir.GLFW}"
 	}
+
+		links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
+	}
+
 
 	filter "system:windows"
 		cppdialect "C++17"
